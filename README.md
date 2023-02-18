@@ -5,7 +5,7 @@ Clone this project from the git repo with this
 git clone <url>
 ```
 
-cd into the project directory OR open the project with favourite code editor
+cd into the project directory OR open the project with your favourite code editor
 and run the below command
 
 ```sh
