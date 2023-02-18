@@ -67,7 +67,7 @@ const Tasks = () => {
       if (TaskBoard.current[taskBoardIndex + 1] && handleTaskBoardDone(TaskBoard.current[taskBoardIndex + 1].activity).checked) {
          //check if the task is not the last TaskBoard task
          if ((taskBoardIndex + 1) !== TaskBoard.current.length) {
-            let PromptMessage = 'Reopening/undoing this task will reopen the other tasks after this current phase. Click okay to continue else click cancel';
+            let PromptMessage = 'This action will reopen the other tasks after this current phase. Click okay to continue else click cancel';
             //if the user confirm changes, reopen all task after this tab
             if (window.confirm(PromptMessage)) {
                let startIndex = taskBoardIndex + 1
@@ -78,10 +78,10 @@ const Tasks = () => {
                      TaskBoard.current[i].activity[j].done = false;
                   }
                }
+            } else {
+               //if the user click cancel confirmation, stop code from running
+               return
             }
-         } else {
-            //if the user click cancel confirmation, stop code from running
-            return;
          }
       }
       //check if previous task have been completed before moving to another one
